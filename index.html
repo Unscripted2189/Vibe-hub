@@ -1,104 +1,178 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian Kipngetich - Portfolio</title>
+  <title>Brian Kipngetich | Portfolio</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
-  
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
-    html { scroll-behavior: smooth; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+    
+    body { 
+      background-color: #020617; 
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: rgba(59, 130, 246, 0.2);
+      filter: blur(100px);
+      z-index: -1;
+    }
+
+    .float-anim {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .glow-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .glow-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+      transform: translateY(-5px);
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body>
   <div id="root"></div>
 
   <script type="text/babel">
+    const { useEffect } = React;
+
     function Portfolio() {
-      const profileImg = "https://files.catbox.moe/cy2xcr.jpg"; 
+      useEffect(() => {
+        AOS.init({ duration: 1200, once: false });
+      }, []);
+
+      const profileImg = "https://files.catbox.moe/cy2xcr.jpg";
 
       return (
         <div className="min-h-screen">
+          <div className="hero-glow"></div>
+          
+          {/* Header/Nav */}
+          <nav className="fixed top-0 w-full z-50 px-6 py-4 backdrop-blur-md border-b border-white/5 flex justify-between items-center">
+            <span className="font-bold tracking-tighter text-blue-500">BK.PORTFOLIO</span>
+            <div className="flex gap-6 text-sm font-medium text-slate-400">
+              <a href="#about" className="hover:text-blue-400 transition">About</a>
+              <a href="#skills" className="hover:text-blue-400 transition">Expertise</a>
+              <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
+            </div>
+          </nav>
+
           {/* Hero Section */}
-          <section className="flex flex-col items-center justify-center min-h-screen p-6 text-center">
-            
-            {/* Profile Picture */}
-            <div className="mb-6">
-              <img 
-                src={profileImg} 
-                alt="Brian Kipngetich" 
-                className="w-40 h-40 rounded-full border-4 border-blue-500 shadow-2xl object-cover mx-auto"
-              />
+          <section className="flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center">
+            <div data-aos="zoom-out" className="mb-8">
+              <img src={profileImg} className="w-44 h-44 rounded-3xl object-cover border-2 border-blue-500/50 rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl shadow-blue-500/20" alt="Brian" />
             </div>
 
-            {/* Personalized Greeting */}
-            <h2 className="text-2xl text-blue-300 font-medium mb-2">Hello,</h2>
-            <h1 className="text-5xl font-bold text-white mb-4">My name is <span className="text-blue-400">Brian Kipngetich</span></h1>
-            
-            <p className="text-xl text-gray-300">Nursing Student & Aspiring Developer</p>
-            <p className="text-blue-300 mb-8 font-medium italic">Uzima University</p>
-            
-            <div className="bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-lg border border-gray-700">
-              <h2 className="text-2xl font-semibold mb-4 text-white">About Me</h2>
-              <p className="text-gray-400 leading-relaxed text-lg">
-                I am passionate about the intersection of healthcare and technology. 
-                Currently building digital solutions while pursuing my nursing degree to 
-                improve patient care through innovation.
+            <div data-aos="fade-up">
+              <h1 className="text-4xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                Hi, I'm <span className="text-blue-500">Brian Kipngetich.</span>
+              </h1>
+              <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed italic">
+                A dedicated <span className="text-white font-semibold">Nursing Student</span> at Uzima University by day, and a passionate <span className="text-white font-semibold">Developer</span> by night. I thrive at the intersection of clinical care and digital innovation, believing that the same precision used in saving lives can be used to build world-class software.
               </p>
+              
+              <div className="mt-12 flex gap-4 justify-center">
+                <a href="#skills" className="px-8 py-4 bg-blue-600 rounded-2xl font-bold shadow-lg shadow-blue-500/40 hover:scale-105 transition-transform">Explore My Skills</a>
+              </div>
             </div>
             
-            <a href="#skills" className="mt-12 animate-bounce flex flex-col items-center text-blue-400">
-              <span className="text-sm font-bold tracking-widest uppercase mb-2">Explore My Work</span>
-              <span className="text-2xl">↓</span>
-            </a>
+            <div className="mt-16 animate-bounce text-slate-600 text-sm font-mono">SCROLL TO DISCOVER ↓</div>
           </section>
 
-          {/* Skills Section */}
-          <section id="skills" className="p-10 bg-gray-800">
-            <h2 className="text-3xl font-bold text-center mb-12 text-blue-400">My Expertise</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Healthcare Card */}
-              <div className="p-8 bg-gray-900 rounded-2xl border border-blue-500/30">
-                <h3 className="text-2xl font-bold text-blue-400 mb-4 text-center">Healthcare</h3>
-                <ul className="text-gray-400 space-y-3 text-lg text-left">
-                  <li>🩺 Clinical Nursing Practice</li>
-                  <li>📋 Patient Monitoring</li>
-                  <li>💉 Medical Documentation</li>
-                </ul>
+          {/* Core Passion Section */}
+          <section id="about" className="py-24 px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div data-aos="fade-right" className="space-y-6">
+                <h2 className="text-3xl font-bold border-l-4 border-blue-500 pl-4">The Dual Passion</h2>
+                <p className="text-slate-400 text-lg">
+                  While my clinical studies teach me the art of healing and patient empathy, my journey in computing allows me to scale that care. I don't just want to treat patients; I want to build the systems that make their treatment safer and more efficient.
+                </p>
+                <div className="flex gap-8">
+                  <div>
+                    <h3 className="text-blue-500 font-bold text-2xl">Uzima</h3>
+                    <p className="text-xs text-slate-500 uppercase">University</p>
+                  </div>
+                  <div>
+                    <h3 className="text-blue-500 font-bold text-2xl">React</h3>
+                    <p className="text-xs text-slate-500 uppercase">Framework</p>
+                  </div>
+                </div>
               </div>
-              {/* Tech Card */}
-              <div className="p-8 bg-gray-900 rounded-2xl border border-green-500/30">
-                <h3 className="text-2xl font-bold text-green-400 mb-4 text-center">Technology</h3>
-                <ul className="text-gray-400 space-y-3 text-lg text-left">
-                  <li>💻 Web Development (React/JS)</li>
-                  <li>📱 Digital Health Solutions</li>
-                  <li>🛠️ Tech Troubleshooting</li>
-                </ul>
+              <div data-aos="fade-left" className="glow-card p-10 rounded-3xl float-anim">
+                <p className="text-xl italic font-light text-blue-200 leading-relaxed">
+                  "Code is like a medical protocol: it must be accurate, reliable, and always centered around the human experience."
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Skills / Expertise */}
+          <section id="skills" className="py-24 px-6 bg-slate-950/50">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-4xl font-black mb-16 text-center" data-aos="fade-up">My Expertise</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" className="glow-card p-8 rounded-2xl">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6 text-2xl">🩺</div>
+                  <h3 className="text-xl font-bold mb-3">Nursing Student</h3>
+                  <p className="text-slate-400 text-sm mb-4">Focused on clinical accuracy, patient safety, and healthcare management at Uzima University.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-blue-400 border border-blue-400/20">PATIENT CARE</span>
+                    <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-blue-400 border border-blue-400/20">DIAGNOSTICS</span>
+                  </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200" className="glow-card p-8 rounded-2xl">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 text-2xl">💻</div>
+                  <h3 className="text-xl font-bold mb-3">Software Dev</h3>
+                  <p className="text-slate-400 text-sm mb-4">Passionate about building fast, responsive web applications using modern JavaScript frameworks.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-green-400 border border-green-400/20">REACT.JS</span>
+                    <span className="px-3 py-1 bg-white/5 rounded-full text-[10px] text-green-400 border border-green-400/20">TAILWIND CSS</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
           {/* Contact Section */}
-          <section className="p-24 text-center">
-            <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
-            <p className="text-gray-400 mb-10 max-w-md mx-auto text-lg">Available for healthcare technology consultations or development collaborations.</p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="mailto:brianroticj@gmail.com" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg">
-                Email Me
-              </a>
-              <a href="tel:+254710263034" className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-10 rounded-full shadow-lg border border-gray-600">
-                Call Brian
-              </a>
+          <section id="contact" className="py-32 px-6 text-center" data-aos="zoom-in">
+            <h2 className="text-4xl font-black mb-6">Let's Create Together</h2>
+            <p className="text-slate-400 max-w-lg mx-auto mb-10">Whether it's a healthcare project or a tech collaboration, I'm ready to bring my dual expertise to the table.</p>
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+              <a href="mailto:brianroticj@gmail.com" className="w-full md:w-auto px-10 py-4 bg-white text-black font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all">Send Message</a>
+              <a href="tel:+254710263034" className="w-full md:w-auto px-10 py-4 border border-white/10 rounded-2xl font-bold hover:bg-white/5 transition-all text-slate-300">Call Me Directly</a>
             </div>
           </section>
 
-          <footer className="p-10 text-center text-gray-600 border-t border-gray-800">
-            <p>© 2025 Brian Kipngetich | Uzima University</p>
+          <footer className="py-10 text-center border-t border-white/5 text-slate-600 text-xs tracking-widest uppercase">
+            Designed by Brian Kipngetich • 2025
           </footer>
         </div>
       );
