@@ -3,42 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian Kipngetich - Nursing Student & Aspiring Developer</title>
-  <meta name="description" content="Portfolio of Brian Kipngetich - Nursing student at Uzima University with a passion for development and technology.">
-  <meta name="keywords" content="Brian Kipngetich, developer, nursing student, portfolio, web development, Uzima University">
+  <title>Brian Kipngetich - Portfolio</title>
   
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.onspace.ai">
-  <meta property="og:title" content="Brian Kipngetich - Nursing Student & Aspiring Developer">
-  <meta property="og:description" content="Portfolio of Brian Kipngetich - Nursing student at Uzima University with a passion for development and technology.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://www.onspace.ai">
-  <meta name="twitter:title" content="Brian Kipngetich - Nursing Student & Aspiring Developer">
-  <meta name="twitter:description" content="Portfolio of Brian Kipngetich - Nursing student at Uzima University with a passion for development and technology.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop">
-  
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Brian Kipngetich",
-    "url": "https://www.onspace.ai",
-    "description": "Nursing student at Uzima University with a passion for development and technology",
-    "jobTitle": "Nursing Student & Aspiring Developer",
-    "email": "brianroticj@gmail.com",
-    "telephone": "+254710263034"
-  }
-  </script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-white">
   <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+
+  <script type="text/babel">
+    function Portfolio() {
+      return (
+        <div class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+          <header class="mb-8">
+            <h1 class="text-4xl font-bold text-blue-400">Brian Kipngetich</h1>
+            <p class="text-xl mt-2">Nursing Student & Aspiring Developer</p>
+            <p class="text-gray-400">Uzima University</p>
+          </header>
+          
+          <div class="bg-gray-800 p-6 rounded-xl shadow-lg max-w-md">
+            <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+            <p class="text-gray-300">
+              I am passionate about the intersection of healthcare and technology. 
+              Currently building digital solutions while pursuing my nursing degree.
+            </p>
+            <div class="mt-6 flex gap-4 justify-center">
+              <a href="mailto:brianroticj@gmail.com" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Contact Me</a>
+            </div>
+          </div>
+          
+          <footer class="mt-10 text-sm text-gray-500">
+            © 2025 Brian Kipngetich • +254710263034
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Portfolio />);
+  </script>
 </body>
 </html>
