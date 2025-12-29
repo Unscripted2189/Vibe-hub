@@ -1,9 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brian Kipngetich - Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div id="root"></div>
+
   <script type="text/babel">
     function Portfolio() {
       const profileImg = "https://files.catbox.moe/cy2xcr.jpg"; 
 
       return (
-        <div className="min-h-screen bg-gray-900 text-white font-sans scroll-smooth">
+        <div className="min-h-screen">
           {/* Hero Section */}
           <section className="flex flex-col items-center justify-center min-h-screen p-6 text-center">
             
@@ -43,42 +63,42 @@
             <h2 className="text-3xl font-bold text-center mb-12 text-blue-400">My Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Healthcare Card */}
-              <div className="p-8 bg-gray-900 rounded-2xl border border-blue-500/30 hover:border-blue-400 transition-colors">
+              <div className="p-8 bg-gray-900 rounded-2xl border border-blue-500/30">
                 <h3 className="text-2xl font-bold text-blue-400 mb-4 text-center">Healthcare</h3>
-                <ul className="text-gray-400 space-y-3 text-lg">
-                  <li className="flex items-center gap-3">🩺 Clinical Nursing Practice</li>
-                  <li className="flex items-center gap-3">📋 Patient Monitoring</li>
-                  <li className="flex items-center gap-3">💉 Medical Documentation</li>
+                <ul className="text-gray-400 space-y-3 text-lg text-left">
+                  <li>🩺 Clinical Nursing Practice</li>
+                  <li>📋 Patient Monitoring</li>
+                  <li>💉 Medical Documentation</li>
                 </ul>
               </div>
               {/* Tech Card */}
-              <div className="p-8 bg-gray-900 rounded-2xl border border-green-500/30 hover:border-green-400 transition-colors">
+              <div className="p-8 bg-gray-900 rounded-2xl border border-green-500/30">
                 <h3 className="text-2xl font-bold text-green-400 mb-4 text-center">Technology</h3>
-                <ul className="text-gray-400 space-y-3 text-lg">
-                  <li className="flex items-center gap-3">💻 Web Development (React/JS)</li>
-                  <li className="flex items-center gap-3">📱 Digital Health Solutions</li>
-                  <li className="flex items-center gap-3">🛠️ Tech Troubleshooting</li>
+                <ul className="text-gray-400 space-y-3 text-lg text-left">
+                  <li>💻 Web Development (React/JS)</li>
+                  <li>📱 Digital Health Solutions</li>
+                  <li>🛠️ Tech Troubleshooting</li>
                 </ul>
               </div>
             </div>
           </section>
 
           {/* Contact Section */}
-          <section className="p-24 text-center bg-gray-900">
+          <section className="p-24 text-center">
             <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
-            <p className="text-gray-400 mb-10 max-w-md mx-auto">Available for healthcare technology consultations or development collaborations.</p>
+            <p className="text-gray-400 mb-10 max-w-md mx-auto text-lg">Available for healthcare technology consultations or development collaborations.</p>
             <div className="flex flex-wrap justify-center gap-6">
-              <a href="mailto:brianroticj@gmail.com" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+              <a href="mailto:brianroticj@gmail.com" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg">
                 Email Me
               </a>
-              <a href="tel:+254710263034" className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-10 rounded-full shadow-lg border border-gray-600 transform hover:scale-105 transition duration-300">
+              <a href="tel:+254710263034" className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-10 rounded-full shadow-lg border border-gray-600">
                 Call Brian
               </a>
             </div>
           </section>
 
           <footer className="p-10 text-center text-gray-600 border-t border-gray-800">
-            <p>© 2025 Brian Kipngetich | Built on OnSpace</p>
+            <p>© 2025 Brian Kipngetich | Uzima University</p>
           </footer>
         </div>
       );
@@ -87,3 +107,5 @@
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<Portfolio />);
   </script>
+</body>
+</html>
