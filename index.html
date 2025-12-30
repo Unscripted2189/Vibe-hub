@@ -26,6 +26,7 @@
 
     .scroll-indicator {
       animation: bounce 2s infinite;
+      cursor: pointer;
     }
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
@@ -81,12 +82,13 @@
                 Dedicated to clinical excellence and deeply passionate about computing.
               </p>
 
-              <div className="mt-16 flex flex-col items-center gap-2 text-slate-500 scroll-indicator">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold">Scroll Down</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              {/* Clickable Scroll Indicator */}
+              <a href="#about" className="mt-16 flex flex-col items-center gap-2 text-slate-500 scroll-indicator group">
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold group-hover:text-blue-400">Scroll Down</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-blue-400">
                   <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
                 </svg>
-              </div>
+              </a>
             </div>
           </section>
 
@@ -106,10 +108,10 @@
             </div>
           </section>
 
-          {/* CLINICAL COMPETENCIES WITH PERCENTAGES */}
+          {/* COMPETENCIES SECTION */}
           <section id="competencies" className="py-24 px-6 bg-slate-900/40">
             <div className="max-w-5xl mx-auto">
-               <h2 className="text-3xl font-black mb-12 text-center uppercase tracking-tighter text-blue-500" data-aos="fade-up">Competencies</h2>
+              <h2 className="text-3xl font-black mb-12 text-center uppercase tracking-tighter text-blue-500" data-aos="fade-up">Competencies</h2>
               <div className="grid md:grid-cols-2 gap-12" data-aos="fade-up">
                 <div className="space-y-6">
                   <div>
@@ -118,7 +120,7 @@
                       <span>88%</span>
                     </div>
                     <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600" style={{ width: '88%' }}></div>
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: '88%' }}></div>
                     </div>
                   </div>
                   <div>
@@ -127,7 +129,7 @@
                       <span>92%</span>
                     </div>
                     <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600" style={{ width: '92%' }}></div>
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: '92%' }}></div>
                     </div>
                   </div>
                 </div>
@@ -138,7 +140,7 @@
                       <span>85%</span>
                     </div>
                     <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-400" style={{ width: '85%' }}></div>
+                      <div className="h-full bg-blue-400 rounded-full" style={{ width: '85%' }}></div>
                     </div>
                   </div>
                   <div>
@@ -147,7 +149,7 @@
                       <span>78%</span>
                     </div>
                     <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-400" style={{ width: '78%' }}></div>
+                      <div className="h-full bg-blue-400 rounded-full" style={{ width: '78%' }}></div>
                     </div>
                   </div>
                 </div>
@@ -159,7 +161,7 @@
           <section id="outreach" className="py-24 px-6 max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-black uppercase tracking-tighter text-blue-500 mb-8" data-aos="fade-up">Outreach</h2>
             <div className="glass-card p-10 rounded-3xl" data-aos="fade-up">
-              <p className="text-slate-400">Community health engagement and support initiatives.</p>
+              <p className="text-slate-400">Community health engagement and health awareness support initiatives.</p>
             </div>
           </section>
 
@@ -167,7 +169,7 @@
           <section id="aspirations" className="py-24 px-6 max-w-6xl mx-auto text-center bg-slate-900/40">
             <h2 className="text-3xl font-black uppercase tracking-tighter text-blue-500 mb-8" data-aos="fade-up">Aspirations</h2>
             <div className="glass-card p-10 rounded-3xl" data-aos="fade-up">
-              <p className="text-slate-400">Bridging the gap between medical science and digital innovation.</p>
+              <p className="text-slate-400">Bridging the gap between medical science and digital innovation in healthcare.</p>
             </div>
           </section>
 
@@ -175,8 +177,13 @@
           <section id="contact" className="py-24 px-6 max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-black uppercase tracking-tighter text-blue-500 mb-8" data-aos="fade-up">Contact</h2>
             <div className="glass-card p-10 rounded-3xl border-b-4 border-blue-500" data-aos="fade-up">
-              <p className="text-slate-400 mb-4">Interested in collaborating or just want to say hi?</p>
-              <a href="mailto:your-email@example.com" className="text-blue-400 font-bold hover:underline">Get In Touch</a>
+              <p className="text-slate-400 mb-6">Interested in collaborating or just want to say hi?</p>
+              <div className="flex flex-col gap-4 items-center">
+                <a href="mailto:brianroticj@gmail.com" className="text-xl font-bold text-blue-400 hover:text-white transition-colors">
+                  brianroticj@gmail.com
+                </a>
+                <p className="text-slate-300 font-medium">Uzima University, 2025</p>
+              </div>
             </div>
           </section>
 
@@ -189,3 +196,4 @@
   </script>
 </body>
 </html>
+
