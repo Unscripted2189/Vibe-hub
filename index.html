@@ -52,12 +52,13 @@
       const profileImg = "https://files.catbox.moe/cy2xcr.jpg";
 
       return (
-        <div className="min-h-screen selection:bg-blue-500/30">
+        <div id="home" className="min-h-screen selection:bg-blue-500/30">
           
           {/* NAVIGATION */}
           <nav className="fixed top-0 w-full z-50 px-4 py-4 backdrop-blur-xl border-b border-white/5">
             <div className="max-w-6xl mx-auto flex flex-col items-center">
               <div className="flex gap-5 sm:gap-8 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 no-scrollbar overflow-x-auto whitespace-nowrap pb-1">
+                <a href="#home" className="hover:text-blue-400">Home</a>
                 <a href="#about" className="hover:text-blue-400">About</a>
                 <a href="#competencies" className="hover:text-blue-400">Competencies</a>
                 <a href="#outreach" className="hover:text-blue-400">Outreach</a>
@@ -82,10 +83,10 @@
                 Dedicated to clinical excellence and deeply passionate about computing.
               </p>
 
-              {/* Clickable Scroll Indicator */}
+              {/* AUTOMATIC SCROLL INDICATOR */}
               <a href="#about" className="mt-16 flex flex-col items-center gap-2 text-slate-500 scroll-indicator group">
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold group-hover:text-blue-400">Scroll Down</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-blue-400">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-blue-400 transition-colors">
                   <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
                 </svg>
               </a>
@@ -177,13 +178,21 @@
           <section id="contact" className="py-24 px-6 max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-black uppercase tracking-tighter text-blue-500 mb-8" data-aos="fade-up">Contact</h2>
             <div className="glass-card p-10 rounded-3xl border-b-4 border-blue-500" data-aos="fade-up">
-              <p className="text-slate-400 mb-6">Interested in collaborating or just want to say hi?</p>
-              <div className="flex flex-col gap-4 items-center">
-                <a href="mailto:brianroticj@gmail.com" className="text-xl font-bold text-blue-400 hover:text-white transition-colors">
-                  brianroticj@gmail.com
+              <p className="text-slate-400 mb-8">Interested in collaborating or just want to say hi?</p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* EMAIL BUTTON */}
+                <a href="mailto:brianroticj@gmail.com" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/20 active:scale-95">
+                  Email Me
                 </a>
-                <p className="text-slate-300 font-medium">Uzima University, 2025</p>
+                
+                {/* CALL ME BUTTON - Placeholder for your number */}
+                <a href="tel:+254700000000" className="w-full sm:w-auto px-8 py-4 border border-blue-500/50 hover:bg-blue-500/10 text-blue-400 font-bold rounded-xl transition-all active:scale-95">
+                  Call Me
+                </a>
               </div>
+              
+              <p className="mt-8 text-[10px] text-slate-500 uppercase tracking-widest font-bold">Uzima University Student</p>
             </div>
           </section>
 
