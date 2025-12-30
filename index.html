@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian Kipngetich | Nursing & Technology</title>
+  <title>Brian Kipngetich | Nursing & Tech Portfolio</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -22,23 +23,22 @@
       background: rgba(15, 23, 42, 0.4);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-5px); }
+    
+    .blue-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: rgba(37, 99, 235, 0.15);
+      filter: blur(120px);
+      z-index: -1;
     }
 
-    .nav-link {
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #14b8a6;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after { width: 100%; }
+    /* Custom scrollbar for mobile nav */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 <body>
@@ -55,134 +55,144 @@
       const profileImg = "https://files.catbox.moe/cy2xcr.jpg";
 
       return (
-        <div className="min-h-screen">
+        <div className="min-h-screen selection:bg-blue-500/30">
+          <div className="blue-glow top-0 right-0"></div>
+          <div className="blue-glow bottom-0 left-0"></div>
           
-          {/* NAVIGATION - Added Clinical, Vision, and Tech */}
+          {/* NAVIGATION */}
           <nav className="fixed top-0 w-full z-50 px-4 py-5 backdrop-blur-xl border-b border-white/5">
-            <div className="max-w-6xl mx-auto flex justify-between items-center">
-              <span className="font-black text-teal-500 tracking-tighter text-xl">BK.</span>
-              <div className="flex gap-4 sm:gap-8 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                <a href="#about" className="nav-link hover:text-white">About</a>
-                <a href="#clinical" className="nav-link hover:text-white">Clinical</a>
-                <a href="#vision" className="nav-link hover:text-white hidden md:block">Vision</a>
-                <a href="#tech" className="nav-link hover:text-white">Tech</a>
-                <a href="#contact" className="text-teal-500 font-extrabold px-2">Contact</a>
+            <div className="max-w-6xl mx-auto flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+              <span className="text-blue-500 text-xl tracking-tighter font-black">BK.</span>
+              <div className="flex gap-4 sm:gap-6 text-slate-400 overflow-x-auto no-scrollbar whitespace-nowrap px-2">
+                <a href="#about" className="hover:text-blue-400 transition">About</a>
+                <a href="#competencies" className="hover:text-blue-400 transition">Skills</a>
+                <a href="#outreach" className="hover:text-blue-400 transition">Outreach</a>
+                <a href="#aspirations" className="hover:text-blue-400 transition">Aspirations</a>
+                <a href="#contact" className="text-blue-500 border border-blue-500/20 px-3 py-1 rounded-lg">Contact</a>
               </div>
             </div>
           </nav>
 
-          {/* HERO SECTION */}
-          <section className="relative flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center overflow-hidden">
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-teal-500/10 blur-[120px] rounded-full -z-10"></div>
-            
-            <div data-aos="zoom-in" className="mb-8">
-              <img src={profileImg} className="w-44 h-44 rounded-[2.5rem] object-cover border-2 border-teal-500/20 shadow-2xl" alt="Brian" />
+          {/* HERO */}
+          <section className="flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center">
+            <div data-aos="zoom-in" className="mb-8 relative">
+              <div className="absolute inset-0 bg-blue-500 blur-2xl opacity-20 animate-pulse"></div>
+              <img src={profileImg} className="relative w-40 h-40 rounded-full object-cover border-4 border-blue-500/20 shadow-2xl" alt="Brian" />
             </div>
-
             <div data-aos="fade-up">
               <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter">
-                Hi, I'm <br/><span className="text-teal-500">Brian Kipngetich.</span>
+                Hi, I'm <span className="text-blue-500">Brian Kipngetich.</span>
               </h1>
-              <p className="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed font-light">
+              <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 font-light leading-relaxed">
                 Nursing Student at <span className="text-white font-semibold">Uzima University</span>. 
-                Dedicated to clinical excellence with a deep-seated <span className="text-teal-400 font-semibold italic">passion for computing</span> and the future of healthcare technology.
+                Merging clinical precision with a lifelong <span className="text-blue-400 font-semibold italic">passion for computers</span> to innovate the future of patient care.
               </p>
             </div>
           </section>
 
-          {/* ABOUT SECTION */}
-          <section id="about" className="py-32 px-6 max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-16">
+          {/* 1. NURSING EXCELLENCE & DIGITAL PASSION */}
+          <section id="about" className="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="glass-card p-10 rounded-3xl border-t-4 border-blue-600" data-aos="fade-right">
+              <h2 className="text-2xl font-black mb-4 uppercase tracking-tighter text-blue-500">Nursing Excellence</h2>
+              <p className="text-slate-400 text-base leading-relaxed">
+                At Uzima University, I am honing the critical skills required to save lives. My focus is on holistic care—treating the person, not just the symptoms—while maintaining the highest ethical standards of the Nursing Council.
+              </p>
+            </div>
+            <div className="glass-card p-10 rounded-3xl border-t-4 border-blue-400" data-aos="fade-left">
+              <h2 className="text-2xl font-black mb-4 uppercase tracking-tighter text-blue-400">Digital Passion</h2>
+              <p className="text-slate-400 text-base leading-relaxed">
+                Computers are my second language. I am fascinated by how technology can optimize hospital workflows, reduce diagnostic errors, and secure sensitive patient data through modern software solutions.
+              </p>
+            </div>
+          </section>
+
+          {/* 2. CLINICAL COMPETENCIES */}
+          <section id="competencies" className="py-24 px-6 bg-slate-900/40">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-black mb-12 text-blue-500 flex items-center gap-4">
+                <span className="h-px w-12 bg-blue-500/30"></span> Clinical Competencies
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  "Patient Vital Assessment", "Wound & Trauma Care", 
+                  "Pharmacological Calculation", "Aseptic Sterile Technique", 
+                  "Emergency Triage", "Clinical Documentation"
+                ].map((skill, i) => (
+                  <div key={i} className="p-5 border border-white/5 bg-white/5 rounded-2xl flex items-center gap-3 hover:bg-blue-500/10 transition-colors cursor-default">
+                    <span className="text-blue-500">✦</span>
+                    <span className="text-slate-300 font-semibold text-sm uppercase tracking-wide">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 3. ACADEMIC MILESTONES */}
+          <section className="py-24 px-6 max-w-5xl mx-auto">
+            <h2 className="text-3xl font-black mb-12 text-center">Academic Milestones</h2>
+            <div className="grid gap-6">
+              <div className="glass-card p-8 rounded-3xl border-l-4 border-blue-500 flex flex-col md:flex-row justify-between md:items-center gap-4" data-aos="fade-up">
+                <div>
+                  <h4 className="font-bold text-white text-xl">Uzima University Degree Program</h4>
+                  <p className="text-slate-500 text-sm mt-1 uppercase tracking-widest font-semibold italic">Focused on B.Sc. in Nursing</p>
+                </div>
+                <div className="px-4 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs font-mono w-fit">2023 - Present</div>
+              </div>
+              <div className="glass-card p-8 rounded-3xl border-l-4 border-blue-500 flex flex-col md:flex-row justify-between md:items-center gap-4" data-aos="fade-up">
+                <div>
+                  <h4 className="font-bold text-white text-xl">Health Informatics Research</h4>
+                  <p className="text-slate-500 text-sm mt-1 uppercase tracking-widest font-semibold italic">Personal Development Project</p>
+                </div>
+                <div className="px-4 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs font-mono w-fit">Continuous</div>
+              </div>
+            </div>
+          </section>
+
+          {/* 4. COMMUNITY OUTREACH */}
+          <section id="outreach" className="py-24 px-6 bg-blue-600/5">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
               <div data-aos="fade-right">
-                <h2 className="text-xs font-bold text-teal-500 uppercase tracking-[0.4em] mb-4">Introduction</h2>
-                <h3 className="text-4xl font-black mb-6">The Journey of Care.</h3>
-                <p className="text-slate-400 leading-relaxed text-lg mb-6">
-                  My path in nursing began with a simple goal: to serve humanity. At Uzima University, I've transformed that goal into a professional pursuit of excellence. I believe that nursing is the backbone of the healthcare system, requiring a unique blend of scientific precision and emotional intelligence.
+                <h2 className="text-4xl font-black mb-6 leading-tight">Giving Back to the <br/><span className="text-blue-500 text-6xl italic">Community.</span></h2>
+                <p className="text-slate-400 text-lg leading-relaxed">
+                  I actively participate in health drives in Kisumu and surrounding areas, helping with blood pressure screenings, diabetes awareness, and basic first aid education for those in need.
                 </p>
               </div>
-              <div className="space-y-4" data-aos="fade-left">
-                <div className="glass-card p-6 rounded-2xl">
-                  <h4 className="font-bold text-white mb-2 italic">Academic Foundation</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">Currently pursuing my Nursing degree with a focus on evidence-based practices and holistic patient management.</p>
+              <div className="grid grid-cols-2 gap-6" data-aos="zoom-in">
+                <div className="bg-slate-900 border border-white/5 p-8 rounded-[2rem] text-center shadow-xl">
+                  <span className="block text-4xl font-black text-blue-500 mb-2">08+</span>
+                  <span className="text-xs text-slate-500 uppercase font-bold tracking-widest">Medical Outreach Programs</span>
                 </div>
-                <div className="glass-card p-6 rounded-2xl border-l-2 border-teal-500">
-                  <h4 className="font-bold text-white mb-2 italic">Digital Integration</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">Actively exploring how computer science can enhance patient safety and clinical workflows.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* NEW: CLINICAL SECTION */}
-          <section id="clinical" className="py-32 px-6 bg-slate-900/20">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-xs font-bold text-teal-500 uppercase tracking-[0.4em] mb-4 text-center">Practice</h2>
-              <h3 className="text-4xl font-black mb-16 text-center">Clinical Exposure.</h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="glass-card p-10 rounded-[2rem] border-b-2 border-teal-500/20" data-aos="fade-up">
-                  <h4 className="text-xl font-bold mb-4">Medical-Surgical</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">Experience in managing acute and chronic conditions, focusing on pre- and post-operative care and patient stability.</p>
-                </div>
-                <div className="glass-card p-10 rounded-[2rem] border-b-2 border-teal-500/20" data-aos="fade-up" data-aos-delay="100">
-                  <h4 className="text-xl font-bold mb-4">Pediatric Care</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">Dedicated to the health and well-being of infants and children, providing specialized care in developmental environments.</p>
-                </div>
-                <div className="glass-card p-10 rounded-[2rem] border-b-2 border-teal-500/20" data-aos="fade-up" data-aos-delay="200">
-                  <h4 className="text-xl font-bold mb-4">Community Health</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">Engaging with rural communities to provide health education and preventative medical services across Kenya.</p>
+                <div className="bg-slate-900 border border-white/5 p-8 rounded-[2rem] text-center shadow-xl">
+                  <span className="block text-4xl font-black text-blue-500 mb-2">150+</span>
+                  <span className="text-xs text-slate-500 uppercase font-bold tracking-widest">Patients Assisted</span>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* NEW: VISION SECTION */}
-          <section id="vision" className="py-32 px-6 max-w-6xl mx-auto">
-            <div className="text-center mb-16" data-aos="fade-up">
-              <h2 className="text-xs font-bold text-teal-500 uppercase tracking-[0.4em] mb-4">Mission</h2>
-              <h3 className="text-4xl font-black">Professional Values.</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-8 border border-white/5 rounded-3xl" data-aos="fade-right">
-                <span className="text-3xl">🛡️</span>
-                <h4 className="text-xl font-bold mt-4 mb-2">Patient Advocacy</h4>
-                <p className="text-slate-400 text-sm">Ensuring every patient has a voice and receives equitable, high-quality care regardless of their background.</p>
-              </div>
-              <div className="p-8 border border-white/5 rounded-3xl" data-aos="fade-left">
-                <span className="text-3xl">📚</span>
-                <h4 className="text-xl font-bold mt-4 mb-2">Lifelong Learning</h4>
-                <p className="text-slate-400 text-sm">The medical field is ever-evolving. I am committed to continuous study and staying updated with global health trends.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* NEW: TECH SECTION */}
-          <section id="tech" className="py-32 px-6 bg-teal-500/5">
-            <div className="max-w-4xl mx-auto text-center" data-aos="zoom-in">
-              <h2 className="text-xs font-bold text-teal-500 uppercase tracking-[0.4em] mb-4">The Computer Passion</h2>
-              <h3 className="text-4xl font-black mb-8">Bridging the Gap.</h3>
-              <p className="text-slate-300 text-lg leading-relaxed mb-10">
-                My passion for computers isn't just a hobby—it's a tool for the future. In a world where Health Informatics is becoming vital, my ability to understand and build digital systems gives me a unique edge in hospital management and patient data security.
+          {/* 5. FUTURE ASPIRATIONS */}
+          <section id="aspirations" className="py-32 px-6 max-w-4xl mx-auto text-center">
+            <div data-aos="fade-up">
+              <h2 className="text-3xl font-black mb-10 text-blue-400 uppercase tracking-widest">Future Aspirations</h2>
+              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light italic">
+                "My ultimate goal is to lead the digitalization of healthcare in Kenya. I aspire to become a Nursing Informatics Specialist, creating a world where no patient is left behind because of a slow system."
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <span className="px-4 py-1 border border-teal-500/30 rounded-full text-[10px] font-bold text-teal-500">SYSTEMS ARCHITECTURE</span>
-                <span className="px-4 py-1 border border-teal-500/30 rounded-full text-[10px] font-bold text-teal-500">HEALTH INFORMATICS</span>
-                <span className="px-4 py-1 border border-teal-500/30 rounded-full text-[10px] font-bold text-teal-500">DATA ANALYSIS</span>
-              </div>
+              <div className="mt-8 h-1 w-24 bg-blue-600 mx-auto rounded-full"></div>
             </div>
           </section>
 
-          {/* CONTACT SECTION */}
-          <section id="contact" className="py-40 px-6 text-center">
-            <h2 className="text-4xl font-black mb-12">Connect With Me</h2>
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <a href="mailto:brianroticj@gmail.com" className="px-12 py-5 bg-teal-600 rounded-2xl font-bold shadow-2xl shadow-teal-500/20 hover:bg-teal-500 transition-all">Send Email</a>
-              <a href="tel:+254710263034" className="px-12 py-5 border border-white/10 rounded-2xl font-bold hover:bg-white/5 transition-all">Call Direct</a>
+          {/* CONTACT */}
+          <section id="contact" className="py-32 px-6 text-center">
+            <h2 className="text-5xl md:text-7xl font-black mb-12 tracking-tighter">Stay In <span className="text-blue-500">Touch.</span></h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a href="mailto:brianroticj@gmail.com" className="w-full sm:w-auto px-12 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all shadow-xl shadow-blue-500/20">Email Me</a>
+              <a href="tel:+254710263034" className="w-full sm:w-auto px-12 py-5 border border-white/10 rounded-2xl font-bold hover:bg-white/5 transition-all text-slate-300">Call Directly</a>
             </div>
-            <p className="mt-12 text-slate-500 text-sm">Kisumu, Kenya | Uzima University Student</p>
+            <p className="mt-16 text-slate-600 text-[10px] tracking-[0.5em] font-bold uppercase">Kisumu, Kenya | Uzima University Student</p>
           </section>
 
-          <footer className="py-12 border-t border-white/5 text-center">
-            <p className="text-slate-600 text-[10px] tracking-[0.5em] uppercase font-bold">Brian Kipngetich © 2025</p>
+          <footer className="py-12 text-center border-t border-white/5">
+            <p className="text-slate-700 text-[10px] tracking-widest uppercase font-black">Brian Kipngetich © 2025</p>
           </footer>
         </div>
       );
