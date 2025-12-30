@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brian Kipngetich | Portfolio</title>
+  <title>Brian Kipngetich | Nursing Professional</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -15,50 +16,32 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-    
     html { scroll-behavior: smooth; }
-
-    body { 
-      background-color: #020617; 
-      color: #f8fafc;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-    }
-
-    .hero-glow {
+    body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
+    
+    .medical-glow {
       position: absolute;
-      top: 10%;
-      left: 10%;
-      width: 400px;
-      height: 400px;
-      background: rgba(59, 130, 246, 0.15);
+      top: 5%;
+      right: 5%;
+      width: 500px;
+      height: 500px;
+      background: rgba(20, 184, 166, 0.1);
       filter: blur(120px);
       z-index: -1;
     }
 
-    .heartbeat {
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
+    .heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
     @keyframes heartbeat {
-      0% { transform: scale(1); }
+      0%, 70%, 100% { transform: scale(1); }
       14% { transform: scale(1.1); }
       28% { transform: scale(1); }
       42% { transform: scale(1.1); }
-      70% { transform: scale(1); }
     }
 
-    .glow-card {
+    .glass-card {
       background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .glow-card:hover {
-      border-color: rgba(59, 130, 246, 0.5);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
-      transform: translateY(-8px);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
   </style>
 </head>
@@ -76,123 +59,143 @@
       const profileImg = "https://files.catbox.moe/cy2xcr.jpg";
 
       return (
-        <div className="min-h-screen selection:bg-blue-500/30">
-          <div className="hero-glow"></div>
+        <div className="min-h-screen selection:bg-teal-500/30">
+          <div className="medical-glow"></div>
           
           {/* Navigation */}
           <nav className="fixed top-0 w-full z-50 px-6 py-5 backdrop-blur-lg border-b border-white/5 flex justify-between items-center">
-            <span className="font-extrabold tracking-tighter text-xl text-blue-500 hover:scale-105 transition-transform cursor-default">BK.</span>
-            <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-              <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
-              <a href="#skills" className="hover:text-blue-400 transition-colors">Expertise</a>
-              <a href="#contact" className="text-blue-500 border border-blue-500/20 px-4 py-1 rounded-full hover:bg-blue-500/10 transition-all">Connect</a>
+            <span className="font-extrabold tracking-tighter text-xl text-teal-500">BK.NURSING</span>
+            <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              <a href="#about" className="hover:text-teal-400 transition">About</a>
+              <a href="#clinical" className="hover:text-teal-400 transition">Clinical</a>
+              <a href="#skills" className="hover:text-teal-400 transition">Competencies</a>
+              <a href="#contact" className="text-teal-500">Contact</a>
             </div>
           </nav>
 
           {/* Hero Section */}
           <section className="flex flex-col items-center justify-center min-h-screen pt-20 px-6 text-center">
-            <div data-aos="zoom-in" className="mb-10 relative">
-              <div className="absolute inset-0 bg-blue-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-              <img src={profileImg} className="relative w-40 h-40 md:w-52 md:h-52 rounded-3xl object-cover border-2 border-white/10 shadow-2xl transition-all duration-700 hover:grayscale-0 grayscale-[30%]" alt="Brian" />
+            <div data-aos="zoom-in" className="mb-8 relative">
+              <div className="absolute inset-0 bg-teal-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+              <img src={profileImg} className="relative w-44 h-44 rounded-full object-cover border-4 border-teal-500/20 shadow-2xl" alt="Brian" />
             </div>
 
             <div data-aos="fade-up">
-              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-                HEALING <br/>THROUGH <span className="text-blue-500">CODE.</span>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-tight">
+                COMPASSIONATE <br/><span className="text-teal-500">CLINICAL CARE.</span>
               </h1>
-              <p className="max-w-2xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed">
-                I'm <span className="text-white font-semibold">Brian Kipngetich</span>. 
-                Bridging clinical excellence at <span className="text-blue-400">Uzima University</span> with 
-                modern software architecture. I build digital tools for a healthier world.
+              <p className="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
+                Nursing Student at <span className="text-white font-semibold">Uzima University</span>. 
+                Dedicated to holistic healing, patient advocacy, and leveraging digital tools to improve 
+                healthcare outcomes in Kenya and beyond.
               </p>
-              
-              <div className="mt-12">
-                <a href="#skills" className="group inline-flex items-center gap-3 px-10 py-4 bg-blue-600 rounded-full font-bold shadow-xl shadow-blue-500/20 hover:bg-blue-500 hover:scale-105 transition-all">
-                  View Expertise
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
+              <div className="mt-10 flex gap-4 justify-center">
+                <a href="#clinical" className="px-8 py-3 bg-teal-600 rounded-full font-bold shadow-lg shadow-teal-500/20 hover:bg-teal-500 transition-all">Clinical Experience</a>
               </div>
             </div>
           </section>
 
-          {/* About Section */}
-          <section id="about" className="py-32 px-6 max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-20 items-center">
-              <div data-aos="fade-right" className="space-y-8">
-                <h2 className="text-4xl font-black">The Dual <br/><span className="text-blue-500">Perspective.</span></h2>
-                <p className="text-slate-400 text-lg leading-relaxed">
-                  In nursing, precision saves lives. In development, precision creates seamless experiences. I leverage the empathy learned in clinical wards to build user-centric applications that matter.
+          {/* Detailed About Section */}
+          <section id="about" className="py-24 px-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div data-aos="fade-right">
+                <h2 className="text-3xl font-bold mb-6 text-teal-500">Professional Philosophy</h2>
+                <p className="text-slate-300 leading-relaxed mb-4">
+                  My journey at Uzima University has shaped my belief that nursing is both a precise science and a deep art. I am committed to the <span className="text-white">Seven Pillars of Nursing Care</span>: Integrity, Compassion, Professionalism, and Excellence.
                 </p>
-                <div className="flex gap-12">
-                  <div className="border-l-2 border-blue-500 pl-4">
-                    <h3 className="text-white font-bold text-2xl tracking-tighter">Clinical</h3>
-                    <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Uzima University</p>
-                  </div>
-                  <div className="border-l-2 border-blue-500 pl-4">
-                    <h3 className="text-white font-bold text-2xl tracking-tighter">Technical</h3>
-                    <p className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Full-Stack Dev</p>
-                  </div>
-                </div>
+                <p className="text-slate-400">
+                  I integrate my background in computing to ensure medical records are handled with technical accuracy, while never losing sight of the human being in the hospital bed.
+                </p>
               </div>
-              <div data-aos="fade-up" className="glow-card p-12 rounded-[2rem] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl"></div>
-                <p className="text-2xl font-light italic text-blue-100 leading-snug">
-                  "Code is a clinical protocol translated into logic. Both must be accurate, reliable, and patient-first."
-                </p>
+              <div data-aos="fade-left" className="glass-card p-8 rounded-3xl border-l-4 border-teal-500">
+                <h3 className="text-white font-bold mb-4">Core Values</h3>
+                <ul className="space-y-3 text-sm text-slate-400">
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✔</span> Patient-Centered Advocacy</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✔</span> Evidence-Based Practice (EBP)</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✔</span> Interdisciplinary Collaboration</li>
+                  <li className="flex items-center gap-2"><span className="text-teal-500">✔</span> Cultural Competence in Care</li>
+                </ul>
               </div>
             </div>
           </section>
 
-          {/* Expertise Section */}
-          <section id="skills" className="py-32 px-6 bg-slate-900/30">
-            <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-                <h2 className="text-4xl font-black" data-aos="fade-right">My Skillset</h2>
-                <p className="text-slate-500 font-mono text-sm" data-aos="fade-left">Expertise_v1.0.0</p>
+          {/* Clinical Rotations Section (The "More Things" added) */}
+          <section id="clinical" className="py-24 px-6 bg-slate-900/30">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-12 text-center">Clinical Exposure</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { title: "Medical-Surgical", desc: "Hands-on experience in post-operative care and acute illness management." },
+                  { title: "Maternal & Child", desc: "Assisting in prenatal care, labor support, and neonatal monitoring." },
+                  { title: "Community Health", desc: "Outreach programs focusing on preventative medicine and rural health education." }
+                ].map((item, i) => (
+                  <div key={i} data-aos="fade-up" data-aos-delay={i*100} className="glass-card p-6 rounded-2xl">
+                    <div className="text-teal-500 mb-4 font-bold">0{i+1}.</div>
+                    <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-up" className="glow-card p-10 rounded-3xl group">
-                  <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 text-3xl heartbeat group-hover:bg-blue-500/20 transition-colors">🩺</div>
-                  <h3 className="text-2xl font-bold mb-4">Nursing Professional</h3>
-                  <p className="text-slate-400 mb-6 leading-relaxed">Advanced clinical training with a focus on evidence-based care and diagnostic accuracy.</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Patient Care', 'Diagnostics', 'Advocacy'].map(tag => (
-                      <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] font-bold text-blue-400 border border-blue-500/10">{tag.toUpperCase()}</span>
-                    ))}
+            </div>
+          </section>
+
+          {/* Competencies Section */}
+          <section id="skills" className="py-24 px-6">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-12 border-l-4 border-teal-500 pl-4">Nursing Competencies</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2 text-sm uppercase font-bold tracking-widest text-slate-500">
+                      <span>Clinical Assessment</span>
+                      <span>90%</span>
+                    </div>
+                    <div className="w-full bg-slate-800 h-1.5 rounded-full">
+                      <div className="bg-teal-500 h-1.5 rounded-full w-[90%]"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2 text-sm uppercase font-bold tracking-widest text-slate-500">
+                      <span>Pharmacology & Dosage</span>
+                      <span>85%</span>
+                    </div>
+                    <div className="w-full bg-slate-800 h-1.5 rounded-full">
+                      <div className="bg-teal-500 h-1.5 rounded-full w-[85%]"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2 text-sm uppercase font-bold tracking-widest text-slate-500">
+                      <span>Wound Care & Sterile Tech</span>
+                      <span>88%</span>
+                    </div>
+                    <div className="w-full bg-slate-800 h-1.5 rounded-full">
+                      <div className="bg-teal-500 h-1.5 rounded-full w-[88%]"></div>
+                    </div>
                   </div>
                 </div>
-
-                <div data-aos="fade-up" data-aos-delay="100" className="glow-card p-10 rounded-3xl group">
-                  <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-8 text-3xl group-hover:bg-green-500/20 transition-colors">💻</div>
-                  <h3 className="text-2xl font-bold mb-4">Software Developer</h3>
-                  <p className="text-slate-400 mb-6 leading-relaxed">Developing robust web architectures using the React ecosystem and high-performance UI frameworks.</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['React.js', 'Tailwind', 'System Design'].map(tag => (
-                      <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] font-bold text-green-400 border border-green-500/10">{tag.toUpperCase()}</span>
-                    ))}
-                  </div>
+                <div className="glass-card p-6 rounded-2xl flex items-center justify-center">
+                   <div className="text-center">
+                      <div className="text-4xl heartbeat mb-4">🩺</div>
+                      <h4 className="font-bold text-lg mb-2">Technical Advantage</h4>
+                      <p className="text-xs text-slate-500 max-w-[200px]">Utilizing React and modern web tools to build healthcare dashboards and patient tracking systems.</p>
+                   </div>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Contact Section */}
-          <section id="contact" className="py-40 px-6 text-center">
-            <div data-aos="zoom-in" className="max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-7xl font-black mb-8">Let's build <br/> the <span className="text-blue-500">future.</span></h2>
-              <p className="text-slate-400 text-lg mb-12">Available for health-tech consultations and development collaborations.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:brianroticj@gmail.com" className="px-12 py-5 bg-white text-black font-extrabold rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-2xl shadow-white/5">Email Me</a>
-                <a href="tel:+254710263034" className="px-12 py-5 border border-white/10 rounded-full font-extrabold hover:bg-white/5 transition-all">Call Direct</a>
-              </div>
+          <section id="contact" className="py-32 px-6 text-center">
+            <h2 className="text-4xl font-black mb-6">Professional Inquiry</h2>
+            <p className="text-slate-400 mb-10">Open for clinical opportunities, research collaborations, or health-tech discussions.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="mailto:brianroticj@gmail.com" className="px-10 py-4 bg-white text-black font-bold rounded-full hover:bg-teal-500 hover:text-white transition-all">Email Brian</a>
+              <a href="tel:+254710263034" className="px-10 py-4 border border-white/10 rounded-full font-bold hover:bg-white/5 transition-all">Contact Direct</a>
             </div>
           </section>
 
-          <footer className="py-12 text-center border-t border-white/5">
-            <div className="text-slate-500 text-[10px] font-bold tracking-[0.3em] uppercase">
-              Designed by Brian Kipngetich © 2025
-            </div>
+          <footer className="py-10 text-center border-t border-white/5 text-slate-600 text-[10px] tracking-widest uppercase">
+            Brian Kipngetich • Nursing Portfolio 2025
           </footer>
         </div>
       );
