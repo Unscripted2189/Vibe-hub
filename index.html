@@ -55,7 +55,7 @@
       return (
         <div className="min-h-screen selection:bg-blue-500/30">
           
-          {/* NAVIGATION */}
+          {/* NAVIGATION - Repositioned Contact for better visibility */}
           <nav className="fixed top-0 w-full z-50 px-4 py-4 backdrop-blur-xl border-b border-white/5">
             <div className="max-w-6xl mx-auto flex flex-col items-center">
               <div className="flex gap-5 sm:gap-8 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 no-scrollbar overflow-x-auto whitespace-nowrap pb-1">
@@ -109,69 +109,48 @@
             </div>
           </section>
 
-          {/* CLINICAL COMPETENCIES - UPDATED WITH PERCENTAGES */}
+          {/* CLINICAL COMPETENCIES */}
           <section id="competencies" className="py-24 px-6 bg-slate-900/40">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16" data-aos="fade-up">
-                <h2 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tighter">Clinical Proficiency</h2>
-                <div className="h-1.5 w-24 bg-blue-500 mx-auto rounded-full"></div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Nursing Side */}
-                <div className="space-y-8" data-aos="fade-right">
-                  <h3 className="text-blue-500 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
-                    <span className="w-8 h-px bg-blue-500/50"></span> Nursing Core
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">Patient Assessment</span>
-                        <span className="text-blue-400 text-xs font-bold">85%</span>
-                      </div>
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-1000" style={{ width: '85%' }}></div>
-                      </div>
+              {/* Skill Bars with Percentages */}
+              <div className="grid md:grid-cols-2 gap-12" data-aos="fade-up">
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2 uppercase tracking-widest text-[10px] font-bold text-slate-400">
+                      <span>Clinical Observation</span>
+                      <span>88%</span>
                     </div>
-
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">Critical Thinking</span>
-                        <span className="text-blue-400 text-xs font-bold">90%</span>
-                      </div>
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-1000" style={{ width: '90%' }}></div>
-                      </div>
+                    <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: '88%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2 uppercase tracking-widest text-[10px] font-bold text-slate-400">
+                      <span>Patient Assessment</span>
+                      <span>92%</span>
+                    </div>
+                    <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: '92%' }}></div>
                     </div>
                   </div>
                 </div>
-
-                {/* Tech Side */}
-                <div className="space-y-8" data-aos="fade-left">
-                  <h3 className="text-blue-400 font-bold uppercase tracking-widest text-sm flex items-center gap-2">
-                    <span className="w-8 h-px bg-blue-400/50"></span> Digital Integration
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">Systems Management</span>
-                        <span className="text-blue-400 text-xs font-bold">82%</span>
-                      </div>
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.5)] transition-all duration-1000" style={{ width: '82%' }}></div>
-                      </div>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2 uppercase tracking-widest text-[10px] font-bold text-slate-400">
+                      <span>Software Systems</span>
+                      <span>85%</span>
                     </div>
-
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">Health Informatics</span>
-                        <span className="text-blue-400 text-xs font-bold">75%</span>
-                      </div>
-                      <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                        <div className="h-full bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.5)] transition-all duration-1000" style={{ width: '75%' }}></div>
-                      </div>
+                    <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-400 rounded-full" style={{ width: '85%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2 uppercase tracking-widest text-[10px] font-bold text-slate-400">
+                      <span>Health Informatics</span>
+                      <span>78%</span>
+                    </div>
+                    <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-400 rounded-full" style={{ width: '78%' }}></div>
                     </div>
                   </div>
                 </div>
@@ -179,18 +158,6 @@
             </div>
           </section>
 
-          {/* OUTREACH SECTION (Placeholder for your next step) */}
-          <section id="outreach" className="py-24 px-6 text-center">
-            <h2 className="text-3xl font-black uppercase tracking-tighter mb-4">Outreach</h2>
-            <p className="text-slate-500">Coming soon...</p>
-          </section>
-
-          {/* CONTACT SECTION (Placeholder for your next step) */}
-          <section id="contact" className="py-24 px-6 text-center">
-            <h2 className="text-3xl font-black uppercase tracking-tighter mb-4">Contact</h2>
-            <p className="text-slate-500">Let's connect.</p>
-          </section>
-          
         </div>
       );
     }
